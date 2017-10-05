@@ -26,7 +26,9 @@ myApp.config(function ($routeProvider, $locationProvider) {
       }
     })
     .when('/info', {
-      templateUrl: '/views/templates/info.html',
+      templateUrl: '/views/shelf.html',
+      controller: 'InfoController',
+      controllerAs: 'ic'
     })
     .otherwise({
       redirectTo: 'home'

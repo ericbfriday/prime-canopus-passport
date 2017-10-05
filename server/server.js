@@ -9,6 +9,7 @@ var passport = require('./strategies/localUser');
 var registerRouter = require('./routes/register');
 var indexRouter = require('./routes/index');
 var userRouter = require('./routes/user');
+var itemsRouter = require('./routes/items');
 
 var app = express();
 var port = 3000;
@@ -32,6 +33,8 @@ app.use(bodyParser.json());
 app.use('/register', registerRouter);
 app.use('/user', userRouter);
 app.use('/', indexRouter);
+app.use('/items', itemsRouter);
+
 
 app.listen(port, function() {
     console.log('listening on port', port);

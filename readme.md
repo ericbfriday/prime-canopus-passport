@@ -1,3 +1,3 @@
-# Passport Group Work: Rory, Mike P., Erik, and Nestor.
+# Passport Group Work: Rory, Mike P., Eric, and Nestor.
 
 ## Steps:
