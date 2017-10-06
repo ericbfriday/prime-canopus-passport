@@ -5,5 +5,6 @@
             {{ items.username}},
             <div ng-repeat="eachItem in items.shelfItems">{{ eachItem.description }} <img ng-src="{{ eachItem.url }}" alt="{{ eachItem.description }}"><hr/></div>
         </div>
+        <button class="btn btn-default" ng-click="uc.logout()">Log Out</button>
     </div>
 </section>

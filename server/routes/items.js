@@ -22,7 +22,7 @@ router.put('/', function (req, res) {
     var itemUrl = req.body.url;
     var desc = req.body.description;
     var loggedUser = req.user.username;
-    console.log(req.body.url, req.body.description, req.user.username);
+    console.log(itemUrl, desc, loggedUser);
     // if session is valid return true and username
     if (req.isAuthenticated()) {
         // put in logic for put request!!
