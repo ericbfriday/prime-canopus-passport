@@ -17,4 +17,29 @@ router.get('/', function(req, res){
     });
 });
 
+// test code below -- not functioning
+router.put('/', function (req, res) {
+    var itemUrl = req.body.url;
+    var desc = req.body.description;
+    var loggedUser = req.user.username;
+    console.log(req.body.url, req.body.description, req.user.username);
+    // if session is valid return true and username
+    if (req.isAuthenticated()) {
+        // put in logic for put request!!
+        DBItems.updateOne({ username: loggedUser }, { $push: { shelfItems: { description: desc, url: itemUrl } } }, { upsert: true }, function(err, response){
+            if (err) {
+                console.log('Put error: ', err);
+                res.sendStatus(500);
+            } else {
+                res.sendStatus(202);
+            }
+        });
+    } else {
+        res.sendStatus(401);
+        // res.status(401).send({ isAuth: false });
+    }
+
+});
+// end test code
+
 module.exports = router;

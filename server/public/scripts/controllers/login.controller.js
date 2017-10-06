@@ -13,7 +13,7 @@ myApp.controller('LoginController', function(UserService) {
     }
 
     vm.login = function() {
-        console.log('in login');
+        console.log('in login logging vm.user -> ', vm.user);
         UserService.login(vm.user);
     }
     

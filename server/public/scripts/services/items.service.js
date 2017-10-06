@@ -4,8 +4,6 @@ myApp.service('ItemsService', function($http){
         items:[]
     };
 
-
-
     self.getItems = function(){
         $http({
             method: 'GET',
@@ -15,4 +13,15 @@ myApp.service('ItemsService', function($http){
             self.itemsObject.items = res.data;
         });
     }
+
+    self.addItem = function(shelfObj){
+        console.log(shelfObj);
+        $http({
+            method: 'PUT',
+            url: '/items',
+            data: shelfObj
+        }).then(function(res){
+            console.log('ItemService POST res: ', res);
+        });
+    };
 });

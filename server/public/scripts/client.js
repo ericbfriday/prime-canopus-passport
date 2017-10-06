@@ -30,6 +30,11 @@ myApp.config(function ($routeProvider, $locationProvider) {
       controller: 'InfoController',
       controllerAs: 'ic'
     })
+    .when('/add', {
+      templateUrl: '/views/additems.html',
+      controller: 'AddController',
+      controllerAs: 'ac'
+    })
     .otherwise({
       redirectTo: 'home'
     });
