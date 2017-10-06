@@ -10,7 +10,9 @@ router.get('/', function(req, res){
             console.log('DBItems not found', err);
             res.sendStatus(500);
         }else{
+            console.log('results:', results[0].shelfItems);
             res.send(results);
+            // res.send(results.data);
         }
     });
 });

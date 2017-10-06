@@ -7,7 +7,8 @@ var SALT_WORK_FACTOR = 12;
 var UserSchema = new Schema({
     username: { type: String, require: true, index: { unique: true } },
     password: { type: String, require: true },
-    shelfItems:[{ url: { type: String}}, { desc: { type: String}}]
+    // shelfItems:[ { url: { type: String},  desc: { type: String} } ]
+    shelfItems: [{url: String , desc: String }]
 });
 
 UserSchema.pre('save', function (next) {

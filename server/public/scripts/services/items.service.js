@@ -4,7 +4,7 @@ myApp.service('ItemsService', function($http){
         items:[]
     };
 
-    
+
 
     self.getItems = function(){
         $http({
@@ -12,6 +12,7 @@ myApp.service('ItemsService', function($http){
             url: '/items'
         }).then(function(res){
             console.log('ItemsService res: ', res);
+            self.itemsObject.items = res.data;
         });
     }
 });

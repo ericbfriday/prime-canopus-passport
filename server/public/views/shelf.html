@@ -1,6 +1,7 @@
 <section>
     <h1>Show all items page</h1>
-    <div ng-repeat="item in shelflist" >
+    <div ng-repeat="item in ic.items" >
+        {{item[$index].username}} , {{item[$index].shelfItems[$index].description}}, {{item[$index].shelfItems[$index].url}}
 
     </div>
   
