@@ -1,5 +1,11 @@
 myApp.service('ItemsService', function($http){
     var self = this;
+    self.itemsObject = {
+        items:[]
+    };
+
+    
+
     self.getItems = function(){
         $http({
             method: 'GET',
