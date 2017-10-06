@@ -1,9 +1,9 @@
 <section>
     <h1>Show all items page</h1>
-    <div ng-repeat="item in ic.items" >
-        {{item[$index].username}} , {{item[$index].shelfItems[$index].description}}, {{item[$index].shelfItems[$index].url}}
-
+    <div ng-repeat="item in ic.items">
+        <div ng-repeat="items in item">
+            {{ items.username}},
+            <div ng-repeat="eachItem in items.shelfItems">{{ eachItem.description }} <img ng-src="{{ eachItem.url }}" alt="{{ eachItem.description }}"><hr/></div>
+        </div>
     </div>
-  
-    
 </section>
